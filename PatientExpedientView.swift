@@ -5,7 +5,7 @@ struct PatientExpedientView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Barra superior de navegación interna
+            // barra superior
             HStack {
                 Button(action: onBack) {
                     Image(systemName: "chevron.left")
@@ -20,7 +20,6 @@ struct PatientExpedientView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    // Nota de Evolución / Estudio Radiológico
                     ExpedientNoteCard()
                 }
                 .padding()
