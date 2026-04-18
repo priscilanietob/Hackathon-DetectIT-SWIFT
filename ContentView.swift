@@ -55,17 +55,17 @@ struct XRayViewerView: View {
             if xrayVM.hasImage {
                 Divider().frame(height: 24).padding(.horizontal, 4)
 
-                // Zoom out
+                // zoom out
                 ToolbarIconButton(icon: "minus.magnifyingglass") { xrayVM.zoomOut() }
 
-                // Zoom slider
+                // zoom slider
                 Slider(value: Binding(
                     get: { xrayVM.zoom },
                     set: { xrayVM.zoom = $0 }
                 ), in: 0.25...3.0, step: 0.05)
                 .frame(width: 90)
 
-                // Zoom in
+                // zoom in
                 ToolbarIconButton(icon: "plus.magnifyingglass") { xrayVM.zoomIn() }
 
                 Text("\(Int(xrayVM.zoom * 100))%")
@@ -80,7 +80,7 @@ struct XRayViewerView: View {
 
                 Divider().frame(height: 24).padding(.horizontal, 4)
 
-                // Magnifier toggle
+                // lupa toggle
                 Button {
                     xrayVM.magnifierEnabled.toggle()
                 } label: {
@@ -125,7 +125,6 @@ struct XRayViewerView: View {
                         .offset(xrayVM.offset)
                     #endif
 
-                    // Magnifier overlay
                     if xrayVM.magnifierEnabled && showMagnifier {
                         MagnifierView(
                             image: image,
@@ -135,7 +134,6 @@ struct XRayViewerView: View {
                         )
                     }
 
-                    // Magnifier gesture overlay
                     if xrayVM.magnifierEnabled {
                         Color.clear
                             .contentShape(Rectangle())
@@ -167,7 +165,6 @@ struct XRayViewerView: View {
                     emptyState
                 }
             }
-            // Pan gesture (when magnifier is off)
             .gesture(
                 xrayVM.hasImage && !xrayVM.magnifierEnabled
                 ? AnyGesture(
@@ -224,7 +221,6 @@ struct XRayViewerView: View {
             Spacer()
 
             Button {
-                // Export action placeholder
             } label: {
                 Label("Exportar", systemImage: "square.and.arrow.down")
                     .font(.system(size: 11))
@@ -285,7 +281,6 @@ struct MagnifierView: View {
                 .clipShape(Circle())
             #endif
 
-            // Crosshair
             Circle()
                 .stroke(Color.dtPrimary, lineWidth: 2.5)
                 .frame(width: size, height: size)
