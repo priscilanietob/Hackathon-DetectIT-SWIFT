@@ -1,6 +1,5 @@
 import SwiftUI
 
-// 1. Cabecera del Paciente
 struct PatientHeaderCard: View {
     var onViewExpedient: () -> Void
     var body: some View {
@@ -20,7 +19,6 @@ struct PatientHeaderCard: View {
     }
 }
 
-// 2. Cabecera del Doctor
 struct DoctorHeaderCard: View {
     var body: some View {
         HStack {
@@ -34,7 +32,6 @@ struct DoctorHeaderCard: View {
     }
 }
 
-// 3. Tarjeta de Signos Vitales
 struct VitalSignBox: View {
     let label, value, icon: String
     let color: Color
@@ -49,7 +46,6 @@ struct VitalSignBox: View {
     }
 }
 
-// 4. Tarjeta Contenedora Genérica
 struct InfoCard<Content: View>: View {
     let title, icon: String
     let content: Content
@@ -67,7 +63,6 @@ struct InfoCard<Content: View>: View {
     }
 }
 
-// 5. Filas de contacto y Etiquetas
 struct ContactRow: View {
     let icon, label, value: String
     var body: some View {
@@ -90,7 +85,6 @@ struct TagView: View {
     }
 }
 
-// 6. Tarjeta de Nota de Expediente
 struct ExpedientNoteCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
