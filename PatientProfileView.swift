@@ -7,7 +7,6 @@ struct PatientProfileView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                // Xcode buscará esto automáticamente en ProfileComponents
                 PatientHeaderCard(onViewExpedient: onViewExpedient)
 
                 VStack(alignment: .leading, spacing: 15) {
