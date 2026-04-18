@@ -1,13 +1,13 @@
 import SwiftUI
 import Combine 
 
-// Lógica de Usuario
+// logica de Usuario
 class AuthViewModel: ObservableObject {
     @Published var userEmail: String = "doctor@detectit.com"
     func logout() { print("Saliendo...") }
 }
 
-// Lógica del Chat
+// logica del Chat
 class ChatViewModel: ObservableObject {
     @Published var hasImage: Bool = false
 }
