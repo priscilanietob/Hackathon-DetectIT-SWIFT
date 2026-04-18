@@ -25,7 +25,6 @@ extension View {
     }
 }
 
-// Colores base si no los tienes definidos aún
 extension Color {
     static let dtPrimary = Color.blue
     static let dtCard = Color(white: 1.0)
@@ -34,7 +33,7 @@ extension Color {
     static let dtMutedFg = Color.gray
     static let dtForeground = Color.black
     static let dtSecondary = Color.gray.opacity(0.2)
-    static let dtBackground = Color(white: 0.95) // O el color que prefieras para el fondo
-    static let dtDestructive = Color.red // O el tono de rojo que prefieras
+    static let dtBackground = Color(white: 0.95) 
+    static let dtDestructive = Color.red 
     
 }
